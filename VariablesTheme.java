@@ -50,7 +50,8 @@ public class VariablesTheme {
         int int4 = 2_147_483_647;
         long long4 = 9_223_372_036_854_775_807L;
 
-        byte incrByte = (++byte4);                         
+        byte incrByte = (++byte4);
+        byte decrByte = --byte4;                         
         short incrShort = ++short4;
         short decrShort = --short4;
         int incrInt = ++int4;
@@ -88,15 +89,15 @@ public class VariablesTheme {
         x1 = x1 + x2; //sum numbers = 7
         x2 = x1 - x2; // x2 = 7 - 2 = 2 | x2 = 5
         x1 = x1 - x2;  // x1 = 7 - 5 =2 | x1 = 2 
-            System.out.println("\n"+opt2+"\n"+begin+"\n"+numb1+"5"+"; "+numb2+"2"+
-            "\n"+beginNew+"\n"+numb1+x1+"; "+numb2+x2);
+            System.out.println("\n"+opt2+"\n"+initVal+"\n"+numb1+"5"+"; "+numb2+"2"+
+            "\n"+initNew+"\n"+numb1+x1+"; "+numb2+x2);
 
         //С помощью побитовой операции
         x1 = x1 ^ x2; 
         x2 = x1 ^ x2;
         x1 = x1 ^ x2;
-            System.out.println("\n"+opt3+"\n"+begin+"\n"+numb1+"2"+"; "+numb2+"5"+
-            "\n"+beginNew+"\n"+numb1+x1+"; "+numb2+x2);
+            System.out.println("\n"+opt3+"\n"+initVal+"\n"+numb1+"2"+"; "+numb2+"5"+
+            "\n"+initNew+"\n"+numb1+x1+"; "+numb2+x2);
 
         String str6 = "6. Вывод символов и их кодов";
         char ch35 = '#';
