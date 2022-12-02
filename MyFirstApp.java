@@ -7,6 +7,7 @@ public class MyFirstApp {
         Scanner console = new Scanner(System.in, "cp866");
         System.out.print("Введите свое имя: ");
         System.out.println(console.nextLine());
+        System.out.println("Данный текст виден после изменения");
         
     }
 }
