@@ -115,7 +115,8 @@ public class VariablesTheme {
         int hour = secTotal / 3600; //делим общ.кол-во сек на кол-во сек в часе
         int minutes = (secTotal % 3600) / 60; //от остатка часа деленного на минуты в часе - получаем минуты
         int second = secTotal % 3600 % 60; //получаем остаток - это секунды
-        System.out.println("\n9. Вывод времени\n" + hour + ":"+ minutes + ":" + second);
+        System.out.println("\n9. Вывод времени");
+        System.out.println(hour + ":"+ minutes + ":" + second);
 
     }
 }
