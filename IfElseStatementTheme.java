@@ -6,7 +6,7 @@ public class IfElseStatementTheme {
         Scanner scannerAge = new Scanner(System.in);
         System.out.println("Введите сколько Вам полных лет: ");
         int age = scannerAge.nextInt();
-        if(age<20) {
+        if (age<20) {
             System.out.println("Вы младше 20 лет");
         } else {
             System.out.println("Вы старше 20 лет");
@@ -16,7 +16,7 @@ public class IfElseStatementTheme {
         System.out.println("\nВведите ваш пол русскими буквами: ");
         String requestGender = scannerRequestGender.nextLine();
         String trueGender = "мужской";
-        if (requestGender.equalsIgnoreCase(trueGender)){
+        if (requestGender.equalsIgnoreCase(trueGender)) {
             System.out.println("Пользователь - мужчина");
         } else {
             System.out.println("Пользователь - женщина");
@@ -24,14 +24,14 @@ public class IfElseStatementTheme {
         Scanner scannerHeight = new Scanner (System.in);
         System.out.println("\nВведите ваш рост в см: ");
         float heigh = scannerHeight.nextFloat()/100;
-        if (heigh < 1.80){
+        if (heigh < 1.80) {
             System.out.println("Ваш рост ниже 1 м 80 см, и составляет: " + (int) (heigh*100) + " см");
         } else {
             System.out.println("Ваш рост выше 180 см, и составляет: " + (int) (heigh*100) + " см");
         }
         String name = "Bary";
         char firstLetterName = name.charAt(0);
-        if (firstLetterName == 'M'){
+        if (firstLetterName == 'M') {
             System.out.println("Ваше имя начинается на букву \"M\"");
         } else if (firstLetterName == 'I') {
             System.out.println("Ваше имя начинается на букву \"I\"");
@@ -78,21 +78,21 @@ public class IfElseStatementTheme {
         System.out.println("\nИсходные числа " + scrNum1 + " и " + scrNum2 );
         if (scrNum1 == scrNum2) {
             System.out.println("Число " + scrNum1 + " и число " + scrNum2 + " равны!");
-        } else if((hundred1 == hundred2) && (tens1 == tens2)) {
+        } else if ((hundred1 == hundred2) && (tens1 == tens2)) {
             System.out.println("одинаковые в них цифры первого разряда: " + hundred1 + " = " 
                 + hundred2 + " и второго разряда: " + tens1 + " = " + tens2 );
-        } else if((tens1 == tens2) && (ones1 == ones2)) {
+        } else if ((tens1 == tens2) && (ones1 == ones2)) {
             System.out.println("одинаковые в них цифры второго разряда: " + tens1 + " = " + tens2 + 
                     " и третьего разряда " + ones1 + " = " + ones2);
-        } else if((hundred1 == hundred2) && (ones1 == ones2)){
+        } else if ((hundred1 == hundred2) && (ones1 == ones2)) {
             System.out.println("одинаковые в них цифры первого разряда: " + hundred1 + " = " 
                     + hundred2 + " и третьего разряда: " + ones1 + " = " + ones2);
-        } else if(hundred1 == hundred2){
+        } else if (hundred1 == hundred2) {
             System.out.println("одинаковые в них цифры первого разряда: " + hundred1 + " = " 
                     + hundred2);
-        } else if(tens1 == tens2){
+        } else if (tens1 == tens2) {
             System.out.println("одинаковые в них цифры второго разряда: " + tens1 + " = " + tens2 );    
-        } else if(ones1 == ones2){
+        } else if (ones1 == ones2) {
             System.out.println("одинаковые в них цифры третьего разряда: " + ones1 + " = " + ones2 );
         } else {
             System.out.println("равных цифр нет!");
@@ -100,9 +100,9 @@ public class IfElseStatementTheme {
 
         System.out.println("\n5. Определение символа по его коду");
         char searchChar = '\u0057';
-        if (( 'A' <= searchChar) && (searchChar <= 'Z')){ //A = 65 Z=90
+        if (( 'A' <= searchChar) && (searchChar <= 'Z')) { //A = 65 Z=90
             System.out.println("код обозначает: " + searchChar + " - большую букву");
-        } else if (('a' <= searchChar) && (searchChar < 'z')){
+        } else if (('a' <= searchChar) && (searchChar < 'z')) {
             System.out.println("код обозначает: " + searchChar + " - маленькую букву");
         } else if (('0' <= searchChar) && (searchChar <= '9')) {
             System.out.println("код является: " + searchChar + " - цифрой");
@@ -113,7 +113,7 @@ public class IfElseStatementTheme {
 
         System.out.println("\n6. Подсчет суммы вклада и начисленных банком %");
         int depositAmount = 300_000;
-        if ((depositAmount < 100_000)){
+        if ((depositAmount < 100_000)) {
             System.out.println("Клиент внес " + depositAmount + 
                     " начисления составят: " + depositAmount*5/100 + 
                     "итоговая сумма к выплате: " + depositAmount + depositAmount*5/100);
