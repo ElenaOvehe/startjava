@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class IfElseStatementTheme {
     public static void main(String[] args) {
-        /*System.out.println("\n1. Перевод псевдокода на язык Java\n");
+        System.out.println("\n1. Перевод псевдокода на язык Java\n");
         Scanner scannerAge = new Scanner(System.in);
         System.out.println("Введите сколько Вам полных лет: ");
         int age = scannerAge.nextInt();
@@ -164,20 +164,7 @@ public class IfElseStatementTheme {
         } else {
             System.out.println(calculationYear);
         }
-*/
 
-/*из банкомата вам необходимо снять 567 USD
-подсчитайте, с помощью какого количества банкнот номиналом 1, 10, 100 банкомат может выдать необходимую сумму
-при этом в банкомате осталось:
-10 банкнот номиналом 100
-5 банкнот номиналом 10
-50 банкнот номиналом 1
-если каких-то банкнот не хватает, то их нужно заменить банкнотами меньшего номинала
-проведите обратный расчет начальной суммы по полученному количеству банкнот, чтобы убедиться в правильности вычислений
-выведите в консоль:
-номиналы банкнот
-требуемое их количество
-выдаваемую сумму*/
         System.out.println("\n9. Подсчет количества банкнот");
         //нужно снять
         int needMoney = 567;
@@ -185,7 +172,7 @@ public class IfElseStatementTheme {
         int hundredBanknotes = needMoney / 100;
         int tensBanknotes = needMoney / 10 % 10;
         int onesBanknotes = needMoney % 10;
-        System.out.println("Проверка количества нужных банкнот. " + needMoney + " это " 
+        System.out.println("Требуемое количество банкнот. " + needMoney + " USD \n"
             + hundredBanknotes + " сотен " + tensBanknotes + " десятков " + onesBanknotes + " единиц");
         //есть в наличии количество банкнот
         int thereAreHundredsUSD = 10;
@@ -194,8 +181,8 @@ public class IfElseStatementTheme {
         int jarTotalMoney = 10*100+5*10+50*1;
         int remainderOnes = thereAreOnesUSD - onesBanknotes;
         int remainderTens = thereAreTensUSD - tensBanknotes;
-        System.out.println("В банкомате имеется количество банкнот: " + thereAreHundredsUSD + 
-                " банкнот номиналом 100 USD, " + thereAreTensUSD + " банкнот номиналом 10 USD, " 
+        System.out.println("В банкомате имеется количество банкнот: \n" + thereAreHundredsUSD + 
+                " банкнот номиналом 100 USD, \n" + thereAreTensUSD + " банкнот номиналом 10 USD, \n" 
                 + thereAreOnesUSD + " банкнот номиналом 1 USD");
         if (needMoney <= jarTotalMoney){
             System.out.println("Транзакция пройдет, к выдаче: " + needMoney + " USD");
@@ -203,10 +190,16 @@ public class IfElseStatementTheme {
             System.out.println("недостаточно средств в банкомате");
         }
 
-        if (thereAreOnesUSD >= onesBanknotes) {
-            System.out.println("к выдаче "+ onesBanknotes + " банкнот номиналом 1 USD");
-        } else {
-            System.out.println("в банкомате нет банкнот номиналом 1 USD");
+        if (thereAreHundredsUSD >= hundredBanknotes) {
+            System.out.println("к выдаче "+ hundredBanknotes + " банкнот номиналом 100 USD");
+        } else if (thereAreHundredsUSD + (remainderTens/10) > hundredBanknotes) {
+            int calculTensBanknotes = (hundredBanknotes-thereAreHundredsUSD)*10;
+            if (remainderTens >= calculTensBanknotes){
+                System.out.println("к выдаче "+ thereAreHundredsUSD + " банкнот номиналом 10 USD" + 
+                    " и " + calculTensBanknotes + " банкнот по 10 USD");
+            }
+        } else { 
+            System.out.println("В банкомате не хватает банкнот для совершения транзакции");
         }
 
         if (thereAreTensUSD >= tensBanknotes) {
@@ -219,16 +212,11 @@ public class IfElseStatementTheme {
             }
         }
 
-        if (thereAreHundredsUSD >= hundredBanknotes) {
-            System.out.println("к выдаче "+ hundredBanknotes + " банкнот номиналом 100 USD");
-        } else if (thereAreHundredsUSD + (remainderTens/10) > hundredBanknotes) {
-            int calculTensBanknotes = (hundredBanknotes-thereAreHundredsUSD)*10;
-            if (remainderTens >= calculTensBanknotes){
-                System.out.println("к выдаче "+ thereAreHundredsUSD + " банкнот номиналом 10 USD" + 
-                    " и " + calculTensBanknotes + " банкнот по 1 USD");
-            }
+        if (thereAreOnesUSD >= onesBanknotes) {
+            System.out.println("к выдаче "+ onesBanknotes + " банкнот номиналом 1 USD");
+        } else {
+            System.out.println("в банкомате нет банкнот номиналом 1 USD");
         }
-
 
     }
 }
