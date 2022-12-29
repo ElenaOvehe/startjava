@@ -47,15 +47,20 @@ public class IfElseStatementTheme {
         int num3 = -33;
         if (num3 == 0) {
             System.out.println("число " + num3);
-        } else if (num3 != 0) {
-            if (num3 > 0) 
-                System.out.println(num3 + " - число положительное");
-            if (num3 < 0 ) 
-                System.out.println(num3 + " - число отрицательное");
-            if (num3 % 2 == 0) 
+        } else if (num3 > 0) {
+            System.out.println(num3 + " - число положительное");
+            if (num3 % 2 == 0) {
                 System.out.println(num3 + " - число четное");
-            if (num3 % 2 != 0) 
+            } else if (num3 % 2 != 0) {
                 System.out.println(num3 + " - число не четное");
+            } 
+        } else if (num3 < 0) {
+            System.out.println(num3 + " - число отрицательное");
+            if (num3 % 2 == 0) {
+                System.out.println(num3 + " - число четное");
+            } else if (num3 % 2 != 0) {
+                System.out.println(num3 + " - число не четное");
+            }
         }
 
         System.out.println("\n4. Поиск одинаковых цифр в числах");
@@ -87,7 +92,7 @@ public class IfElseStatementTheme {
         char unknownChar = '\u0057';
         if ((unknownChar >= 'A') && (unknownChar <= 'Z')) { //A = 65 Z=90
             System.out.println("код обозначает: " + unknownChar + " - большую букву");
-        } else if ((unknownChar >='a'  ) && (unknownChar < 'z')) {
+        } else if ((unknownChar >='a') && (unknownChar < 'z')) {
             System.out.println("код обозначает: " + unknownChar + " - маленькую букву");
         } else if ((unknownChar >= '0') && (unknownChar <= '9')) {
             System.out.println("код является: " + unknownChar + " - цифрой");
@@ -98,59 +103,44 @@ public class IfElseStatementTheme {
 
         System.out.println("\n6. Подсчет суммы вклада и начисленных банком %");
         int depositAmount = 300_000;
-        int accrual = 0;
-        if (depositAmount < 100_000) {
-            accrual = depositAmount * 5 / 100;
-            System.out.println("\nНа данный вклад начисления составят: 5%");
-        } else if ((100_00 <= depositAmount) && (depositAmount < 300_000)) {
-            accrual = depositAmount * 7 / 100;
-            System.out.println("\nНа данный вклад начисления составят: 7%");
+        int accrual = 5;
+        if ((depositAmount >= 100_000) && (depositAmount < 300_000)) {
+            accrual = 7;
         } else if (depositAmount >= 300_000) {
-            accrual = depositAmount * 10 / 100;
-            System.out.println("\nНа данный вклад начисления составят: 10%");
-        } else {
-            System.out.println("\nПроверьте введенные данные.");
-        }
-        int amountYear = depositAmount + accrual;
+            accrual = 10;
+        } 
+        int accrualCalcul = depositAmount * accrual/100;
+        int amountYear = depositAmount + accrualCalcul;
+        System.out.println("\nНа данный вклад начисления составят: " + accrual + " %");
         System.out.println("Клиент внес: " + depositAmount + "\nНачисления составят: " + 
-                accrual + "\nИтоговая сумма к выплате за год: " + amountYear);
+                accrualCalcul + "\nИтоговая сумма к выплате за год: " + amountYear);
 
         System.out.println("\n7. Определение оценки по предметам\n");
         int ratingHistory = 59;
         int ratingProgramming = 91;
         int averageRating = (ratingHistory + ratingProgramming) / 2;
-        int resultHistory = 0 ;
-        int resultProgramming = 0;
+        int scoresHistory = 2 ;
+        int scoresProgramming = 2;
         
-        if (ratingHistory <= 60) {
-            resultHistory += 2; 
-            System.out.println("2 балла" + " - История" );
-        } else if (ratingHistory > 60 && ratingHistory <= 73) {
-            resultHistory += 3; 
-            System.out.println("3 балла" + " - История");
+        if (ratingHistory > 60 && ratingHistory <= 73) {
+            scoresHistory = 3; 
         }else if (ratingHistory > 73 && ratingHistory <= 91) {
-            resultHistory += 4; 
-            System.out.println("4 балла" + " - История");
+            scoresHistory = 4; 
         } else if (ratingHistory > 91 && ratingHistory <= 100){
-            resultHistory += 5; 
-            System.out.println("5 баллов" + " - История");
+            scoresHistory = 5; 
         } 
 
-        if (ratingProgramming <= 60) {
-            resultProgramming += 2;
-            System.out.println("2 балла" + " - Программирование");
-        } else if (ratingProgramming > 60 && ratingProgramming <= 73) {
-            resultProgramming += 3;
-            System.out.println("3 балла" + " - Программирование");
+        if (ratingProgramming > 60 && ratingProgramming <= 73) {
+            scoresProgramming = 3;
         } else if (ratingProgramming > 73 && ratingProgramming <= 91) {
-            resultProgramming += 4;
-            System.out.println("4 балла - Программирование");
+            scoresProgramming = 4;
         } else if (ratingProgramming > 91 && ratingProgramming <= 100){
-            resultProgramming += 5;
-            System.out.println("5 баллов" + " - Программирование");
+            scoresProgramming = 5;
         }
 
-        int averageScore = (resultHistory + resultProgramming) / 2;
+        int averageScore = (scoresHistory + scoresProgramming) / 2;
+        System.out.println("Ученик получил следующие оценки: \n" + scoresHistory + 
+                " балла по истории\n" + scoresProgramming + " балла по программированию" );
         System.out.println("Средний балл оценок по предметам: " + averageScore +
                 "\nСредний % по предметам: " + averageRating + " %");
 
@@ -158,12 +148,10 @@ public class IfElseStatementTheme {
         int expensisRent = 5_000;
         int expensisGoods = 9_000;
         int profitGoods = 13_000;
-        int calculationYear = (profitGoods - (expensisRent + expensisGoods));
+        int calculationYear = ((profitGoods - (expensisRent + expensisGoods)) * 12);
         if (calculationYear > 0) {
-            calculationYear*=12;
             System.out.println("+" + calculationYear + " руб.");
         } else {
-            calculationYear*=12;
             System.out.println(calculationYear + " руб.");
         }
 
@@ -183,9 +171,11 @@ public class IfElseStatementTheme {
         int jarTotalMoney = 10*100+5*10+50*1;
         int remainderOnes = thereAreOnesUSD - onesBanknotes;
         int remainderTens = thereAreTensUSD - tensBanknotes;
+
         System.out.println("В банкомате имеется количество банкнот: \n" + thereAreHundredsUSD + 
                 " банкнот номиналом 100 USD, \n" + thereAreTensUSD + " банкнот номиналом 10 USD, \n" 
                 + thereAreOnesUSD + " банкнот номиналом 1 USD");
+
         if (needMoney <= jarTotalMoney){
             System.out.println("Транзакция пройдет, к выдаче: " + needMoney + " USD");
         } else {
@@ -194,8 +184,8 @@ public class IfElseStatementTheme {
 
         if (thereAreHundredsUSD >= hundredBanknotes) {
             System.out.println("к выдаче "+ hundredBanknotes + " банкнот номиналом 100 USD");
-        } else if (thereAreHundredsUSD + (remainderTens/10) > hundredBanknotes) {
-            int calculTensBanknotes = (hundredBanknotes-thereAreHundredsUSD)*10;
+        } else if (thereAreHundredsUSD + (remainderTens / 10) > hundredBanknotes) {
+            int calculTensBanknotes = (hundredBanknotes-thereAreHundredsUSD) * 10;
             if (remainderTens >= calculTensBanknotes) {
                 System.out.println("к выдаче "+ thereAreHundredsUSD + " банкнот номиналом 10 USD" + 
                     " и " + calculTensBanknotes + " банкнот по 10 USD");
@@ -206,10 +196,10 @@ public class IfElseStatementTheme {
 
         if (thereAreTensUSD >= tensBanknotes) {
             System.out.println("к выдаче "+ tensBanknotes + " банкнот номиналом 10 USD");
-        } else if (thereAreTensUSD + (remainderOnes/10) > tensBanknotes) {
+        } else if (thereAreTensUSD + (remainderOnes / 10) > tensBanknotes) {
             int calculOnesBanknotes = (tensBanknotes-thereAreTensUSD) * 10;
             if (remainderOnes >= calculOnesBanknotes) {
-                System.out.println("к выдаче "+ thereAreTensUSD + " банкнот номиналом 10 USD" + 
+                System.out.println("к выдаче " + thereAreTensUSD + " банкнот номиналом 10 USD" + 
                     " и " + calculOnesBanknotes + " банкнот номиналом 1 USD");
             }
         }
@@ -219,8 +209,6 @@ public class IfElseStatementTheme {
         } else {
             System.out.println("в банкомате нет банкнот номиналом 1 USD");
         }
-
-
 
     }
 }
