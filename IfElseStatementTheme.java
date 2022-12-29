@@ -92,7 +92,7 @@ public class IfElseStatementTheme {
         char unknownChar = '\u0057';
         if ((unknownChar >= 'A') && (unknownChar <= 'Z')) { //A = 65 Z=90
             System.out.println("код обозначает: " + unknownChar + " - большую букву");
-        } else if ((unknownChar >='a') && (unknownChar < 'z')) {
+        } else if ((unknownChar >= 'a') && (unknownChar < 'z')) {
             System.out.println("код обозначает: " + unknownChar + " - маленькую букву");
         } else if ((unknownChar >= '0') && (unknownChar <= '9')) {
             System.out.println("код является: " + unknownChar + " - цифрой");
